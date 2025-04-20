@@ -1,0 +1,204 @@
+#index {
+  color: #fff;
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left top;
+  .situation{
+    background-image: url('@/assets/images/bg.png');
+  }
+  .energy{
+    background-image: url('@/assets/images/bg1.png');
+  }
+  .statistics{
+    background-image: url('@/assets/images/bg2.png');
+  }
+  .bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title-bar{
+      height: 91px;
+      display: flex;
+      justify-content: center;
+      background-image: url("@/assets/images/title.png");
+      background-size: cover;
+      background-position: center center;
+      .title-text{
+        font-family: mainTitle,微軟正黑體,sans-serif;
+        margin-top: 30px;
+        letter-spacing: 10px;
+        font-size: 24px;
+      }
+      .title-com{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .title-year{
+          background-image: url("@/assets/images/year.png");
+          background-repeat: no-repeat;
+          height: 40px;
+          width: 240px;
+          line-height: 40px;
+          cursor: pointer;
+          position: relative;
+          margin-top: 40px;
+          float: left;
+          span{
+            height: 40px;
+            display: inline-block;
+          }
+          i{
+            font-size: 12px;
+            margin-left: 5px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+          }
+          .year{
+            padding-left: 20px;
+            margin-right: 10px;
+            border-right: 1px solid rgba(41, 101, 87, 1);
+          }
+          .company>span{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 10em;
+            text-align: center;
+            vertical-align: top;
+          }
+          .year-list{
+            position: absolute;
+            background-color: rgba(5, 56, 59, 0.8);
+            left: 20px;
+            z-index: 99;
+            transition: transform 0.3s ease;
+          }
+          .month-list{
+            position: absolute;
+            background-color: rgba(5, 56, 59, 0.8);
+            left: 100px;
+            z-index: 99;
+            transition: transform 0.3s ease;
+          }
+          .company-list{
+            position: absolute;
+            background-color: rgba(5, 56, 59, 0.8);
+            left: 0px;
+            z-index: 99;
+            transition: transform 0.3s ease;
+          }
+          li{
+            padding: 0 10px;
+          }
+          li:hover{
+            background-color: rgba(73, 176, 152, 0.5);
+          }
+        }
+        .title-time{
+          width: 240px;
+          margin-top: 40px;
+          margin-right: 40px;
+        }
+      }
+    }
+    .footer{
+      background-image: url("@/assets/images/bottom.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom center;
+      height: 120px;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        width: 700px;
+        margin: 0 auto;
+        li{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 20px;
+          letter-spacing: 4px;
+          cursor: pointer;
+          .out{
+            width: 44px;
+            height: 44px;
+            border:1px solid rgba(19, 128, 91, 1);
+            border-radius: 22px;
+            margin-bottom: 15px;
+            animation: animate 2s linear infinite;
+          }
+          .in{
+            height: 36px;
+            width: 36px;
+            margin: 3px auto;
+            background-color: rgba(19, 128, 91, 0.5);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i{ font-size: 20px; padding-left: 4px }
+          }
+        }
+        li:hover .in,.inActive{
+          background-image: url("@/assets/images/circle.png")!important;
+          background-size: auto!important;
+          height: 44px!important;
+          width: 44px!important;
+          border-radius: 22px!important;
+          background-position: center center!important;
+        }
+        li:hover .out,.outActive{
+          height: 52px!important;
+          width: 52px!important;
+          border-radius: 26px!important;
+        }
+      }
+    }
+  }
+}
+.rotateTriangle{
+  transform: rotate(-90deg);
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.slide-enter-to,
+.slide-leave-from {
+  max-height: 500px; /* 需大于实际内容高度 */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes animate  {
+  0%{
+    box-shadow: 0 0 0 0 rgba(19, 128, 91, 0),0 0 0 2px rgba(19, 128, 91, 0.4),0 0 0 4px rgba(19, 128, 91, 0.2);
+  }
+  30%{
+    box-shadow: 0 0 0 6px rgba(19, 128, 91, 0.1),0 0 0 8px rgba(19, 128, 91, 0.1),0 0 0 10px rgba(19, 128, 91, 0.1);
+  }
+  70%{
+    box-shadow: 0 0 0 8px rgba(19, 128, 91, 0.1),0 0 0 6px rgba(19, 128, 91, 0.2),0 0 0 4px rgba(19, 128, 91, 0.2);
+  }
+  100%{
+    box-shadow: 0 0 0 2px rgba(19, 128, 91, 0.4),0 0 0 2px rgba(19, 128, 91, 0.4),0 0 0 0 rgba(19, 128, 91, 0);
+  }
+}
